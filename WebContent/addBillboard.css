@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.text {
+	width: 20%;
+	float: left;
+}
+
+.input1 {
+	width: 20%;
+	float: left;
+}
+
+
+.Update{
+	width: 40%;
+	float:right;
+}

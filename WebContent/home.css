@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.title {
+	height: 10px;
+	width: 50%;
+	float: left;
+}
+
+.releaseDate {
+	height: 10px;
+	width: 15%;
+	float: left;
+}
+
+.dueDate {
+	height: 10px;
+	width: 15%;
+	float: left;
+}
+
+.revise {
+	height: 10px;
+	width: 10%;
+	float: left;
+}
+
+.delete {
+	height: 10px;
+	width: 10%;
+	float: left;
+}

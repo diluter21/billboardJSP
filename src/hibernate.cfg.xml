@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD //EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+  
+<hibernate-configuration>
+<session-factory>
+		<!-- hibernate -->
+	    <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password">123456</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=Billboard</property>
+		<!-- 配置dialect語言,明確告訴hibernate連接哪種數據庫 -->
+	    <property name="dialect">org.hibernate.dialect.SQLServer2012Dialect </property>
+		<!-- 顯示出所用的SQL語法 	 -->
+	<property name="show_sql">true</property>
+	<!-- 格式化語法	 -->
+	<property name="hibernate.format_sql">ture</property>
+		<!-- 表的生成策略 update項目需要使用指定表會創鍵新表,再次使用原來已存在的表時,會同步更新到資料庫表中,
+		並保存原來的舊表	 -->
+	<property name="hibernate.hbm2ddl.auto">auto</property>
+		<!-- 事務自動提交	 -->
+		<property name="hibernate.connection.autocommit">true</property>
+		<!-- 將session與本地線程綁定 -->
+		<property name="hibernate.curent_session_context_class">thread</property>
+	
+	
+	
+		<!-- 指定管理的對象映射文件 -->
+		<mapping resource="com/diluter/pojo/Billboard.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

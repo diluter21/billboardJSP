@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 配置項目編碼是utf-8 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 設置URL訪問的拓展名 ,一般為預設職不需更改 -->
+	<constant name="struts.action.extension" value="action,,"></constant>
+	<constant name="struts.enable.DyanmicMethodlnvocation"
+		value="true"></constant>
+	<!-- 是否啟用開發者模式 -->
+	<!--設定 value="true"時，對於配置文件及JAVA文件的修改，會自動載入更新，不用重新啟動伺服器 -->
+	<!--預設為false -->
+	<constant name="struts.devMode" value="true"></constant>
+
+
+	<package name="billboard" namespace="/" extends="struts-default">
+	
+		<action name="goHomePage"
+			class="com.diluter.action.BillboardAction" method="goHomePage">
+			
+			<result name="success" type="dispatcher">/home.jsp</result>
+		</action>
+		
+		
+			<action name="revisePage"
+			class="com.diluter.action.UpdateAction" method="revisePage">
+		<result name="success" type="dispatcher">/reviseBillboard.jsp</result>
+		</action>
+		
+		
+		
+			<action name="revise"
+			class="com.diluter.action.BillboardAction" method="revise">
+			<result name="success" type="chain">
+			<param name="namespace">/</param>
+				<param name="actionName">goHomePage</param>
+			</result>	
+		</action>
+		
+		
+		
+		
+			<action name="deleteDillboardById"
+			class="com.diluter.action.BillboardAction" method="deleteDillboardById">
+			<result name="success" type="chain">
+			<param name="namespace">/</param>
+				<param name="actionName">goHomePage</param>
+			</result>	
+		</action>
+		
+		
+		<action name="addPage"
+			class="com.diluter.action.BillboardAction" method="addPage">
+			<result name="success" type="chain">
+			<param name="namespace">/</param>
+				<param name="actionName">goHomePage</param>
+			</result>	
+		</action>
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+	</package>
+</struts>
+     
+
+
+     
+     
+     
+
